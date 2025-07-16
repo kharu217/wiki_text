@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import bs4
 from bs4 import BeautifulSoup
 import requests
@@ -90,7 +89,7 @@ while page_url != "https://en.wikipedia.org/wiki/Special:AllPages/0" or is_first
     sub_url_l = page_soup.select('div .mw-allpages-body li>a')
     raw_text = ""
     with open("wiki_cxk_point.txt","w+", encoding="utf-8") as p :
-        with open(f"Wikitext\\wiki{page_count}.txt", 'w+', encoding="utf-8") as f :
+        with open(f".\\Wikitext\\wiki{page_count}.txt", 'w+', encoding="utf-8") as f :
             p.write(str(page_count)+"\n")
             for prgraph_url in tqdm(sub_url_l) :
                 main_url ="https://en.wikipedia.org/" + prgraph_url["href"]
@@ -108,4 +107,3 @@ while page_url != "https://en.wikipedia.org/wiki/Special:AllPages/0" or is_first
             page_url = "https://en.wikipedia.org" + page_soup.find_all('a', title="Special:AllPages")[1]["href"]
 f.close()  
 p.close()
->>>>>>> 0c1bdb6136dc2ae73963117951799add08d7f4fa
